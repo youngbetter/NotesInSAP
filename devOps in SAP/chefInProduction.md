@@ -77,7 +77,7 @@
    # https://blog.csdn.net/jesseyoung/article/details/43488351
    ```
 
-   ![ntp-error](.\Pictures\1540886918007.png)
+   ![ntp-error](https://github.com/youngbetter/pichub/blob/master/notes/1540886918007.png)
 
 2. download rpm package of chef-server, chef-manage and chef-workstation.
 
@@ -128,7 +128,7 @@
 
    login server in browser use the <username> created before, http://<chef-server-ip>, download starter kit and transfer it to chef-server at `/opt/chef-data` , `scp`command is a choice.
 
-   ![starter kit](.\Pictures\1540889122662.png)
+   ![starter kit](https://github.com/youngbetter/pichub/blob/master/notes/1540889122662.png)
 
    ```shell
    # on chef-server
@@ -150,15 +150,15 @@
    knife bootstrap -i ~/.ssh/id_dsa 10.3.153.49 -N teamcity-qa2
    ```
 
-   ![knife config error](.\Pictures\1540889977318.png)
+   ![knife config error](https://github.com/youngbetter/pichub/blob/master/notes/1540889977318.png)
 
    this is a implicit error, type command ` knife config get`to get information
 
-   ![knife default config](.\Pictures\1540890402579.png)
+   ![knife default config](https://github.com/youngbetter/pichub/blob/master/notes/1540890402579.png)
 
    that's because `validation_key` is defined but never assigned value, so assign it value at `/opt/chef-data/chef-repo/.chef/knife.rb`, the value is `/etc/chef/<short-org-name>-validator.pem`, it's  actually the RSA private key of your org created before. If you create organization by web_ui, then could touch the `/etc/chef/<short-org-name>-validator.pem` file and copy the RSA private key to it, you can get the key on web_ui by 'Reset Validation Key'.
 
-   ![reset key](.\Pictures\1540891184484.png)
+   ![reset key](https://github.com/youngbetter/pichub/blob/master/notes/1540891184484.png)
 
 6. Compose cookbooks and upload it to server and apply them on client
 
